@@ -86,6 +86,28 @@ class User_model extends EA_Model {
      *
      * @return array|null Returns the session data of the logged in user or null on failure.
      */
+
+    public function check_signup($username, $email)
+    {
+        $result = $this->db;
+            
+
+        if ($result->num_rows() == 0)
+        {
+            return FALSE;
+        }
+
+        $user_id = $result->row()->id;
+
+        // Create a new password and send it with an email to the given email address.
+        $new_password = random_string('alnum', 12);
+        $salt = $this->db->get_where('user_settings', ['id_users' => $user_id])->row()->salt;
+        $hash_password = hash_password($salt, $new_password);
+        $this->db->update('user_settings', ['password' => $hash_password], ['id_users' => $user_id]);
+
+        return $new_password;
+    }
+
     public function check_login($username, $password)
     {
         $salt = $this->get_salt($username);

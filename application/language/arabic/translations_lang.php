@@ -2,6 +2,7 @@
 // Arabic
 $lang['page_title'] = 'احجز موعد مع';
 $lang['service_and_provider'] = 'اختر الخدمة والمزود';
+$lang['signup'];
 $lang['select_service'] = 'اختر الخدمة';
 $lang['select_provider'] = 'اختر المزود';
 $lang['duration'] = 'المدة';

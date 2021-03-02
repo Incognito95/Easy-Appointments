@@ -61,6 +61,10 @@ class User extends EA_Controller {
         $this->load->view('user/login', $view);
     }
 
+    public function signup() {
+        $this->load->view('user/signup', $view);
+    }
+
     /**
      * Display the logout page.
      */

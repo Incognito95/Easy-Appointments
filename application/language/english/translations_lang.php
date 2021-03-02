@@ -196,6 +196,7 @@ $lang['enter_password_here'] = 'Enter your password here ...';
 $lang['login'] = 'Login';
 $lang['forgot_your_password'] = 'Forgot Your Password?';
 $lang['login_failed'] = 'Login failed, please enter the correct credentials and try again.';
+$lang['signup'] = 'signup failed, please enter the correct credentials and try again.';
 $lang['type_username_and_email_for_new_password'] = 'Type your username and your email address to get your new password.';
 $lang['enter_email_here'] = 'Enter your email here ...';
 $lang['regenerate_password'] = 'Regenerate Password';

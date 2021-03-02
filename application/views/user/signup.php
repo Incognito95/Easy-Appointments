@@ -41,8 +41,7 @@
 <body>
 <div id="login-frame" class="frame-container">
     <span id="select-language" class="badge badge-success float-right"><?= ucfirst(config('language')) ?></span>
-    <h2><?= lang('backend_section') ?></h2>
-    <p><?= lang('you_need_to_login') ?></p>
+    <h2>Signup</h2>
     <hr>
     <div class="alert d-none"></div>
     <form id="login-form">
@@ -62,14 +61,14 @@
         <div class="form-group">
             <button type="submit" id="login" class="btn btn-primary">
                 <i class="fas fa-sign-in-alt mr-2"></i>
-                <?= lang('login') ?>
+                Signup
             </button>
             <a href="<?= site_url('user/forgot_password') ?>" class="forgot-password float-right">
             <?= lang('forgot_your_password') ?></a>
         </div>
  
         <hr>
-        <p>Don't have an account? click<a href="<?= site_url('user/signup') ?>" class="forgot-password"> here</a> to signup</p>
+        <p>Already have an account? click<a href="<?= site_url('user/login') ?>" class="forgot-password"> here</a> to login</p>
 
     </form>
 </div>
