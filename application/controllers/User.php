@@ -62,8 +62,11 @@ class User extends EA_Controller {
     }
 
     public function signup() {
+        $view['company_name'] = $this->settings_model->get_setting('company_name');
         $this->load->view('user/signup', $view);
     }
+
+
 
     /**
      * Display the logout page.

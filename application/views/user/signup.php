@@ -39,30 +39,26 @@
     </script>
 </head>
 <body>
+
+
+
 <div id="login-frame" class="frame-container">
     <span id="select-language" class="badge badge-success float-right"><?= ucfirst(config('language')) ?></span>
     <h2>Signup</h2>
     <hr>
     <div class="alert d-none"></div>
-    <form id="login-form">
+    <form id="signup-form" method="post" action="../models/Signup_model.php">
         <div class="form-group">
             <label for="username"><?= lang('username') ?></label>
-            <input type="text" id="username"
-                   placeholder="<?= lang('enter_username_here') ?>"
-                   class="form-control"/>
+            <input type="text" id="username" placeholder="<?= lang('enter_username_here') ?>" class="form-control" name="username" />
         </div>
         <div class="form-group">
             <label for="password"><?= lang('password') ?></label>
-            <input type="password" id="password"
-                   placeholder="<?= lang('enter_password_here') ?>"
-                   class="form-control"/>
+            <input type="password" id="password" placeholder="<?= lang('enter_password_here') ?>" class="form-control" name="password"/>
         </div>
 
         <div class="form-group">
-            <button type="submit" id="login" class="btn btn-primary">
-                <i class="fas fa-sign-in-alt mr-2"></i>
-                Signup
-            </button>
+            <button type="submit" id="signup" class="btn btn-primary"><i class="fas fa-sign-in-alt mr-2"></i>Signup</button>
             <a href="<?= site_url('user/forgot_password') ?>" class="forgot-password float-right">
             <?= lang('forgot_your_password') ?></a>
         </div>
