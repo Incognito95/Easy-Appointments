@@ -61,11 +61,29 @@ class User extends EA_Controller {
         $this->load->view('user/login', $view);
     }
 
+    /**
+     * Display the signup page.
+     */
     public function signup() {
         $view['company_name'] = $this->settings_model->get_setting('company_name');
         $this->load->view('user/signup', $view);
     }
 
+      /**
+     * Display the checkout page.
+     */
+    public function checkout() {
+        $view['company_name'] = $this->settings_model->get_setting('company_name');
+        $this->load->view('user/checkout', $view);
+    }
+
+      /**
+     * Display the products page.
+     */
+    public function products() {
+        $view['company_name'] = $this->settings_model->get_setting('company_name');
+        $this->load->view('user/products', $view);
+    }
 
 
     /**

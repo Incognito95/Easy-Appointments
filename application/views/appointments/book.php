@@ -13,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/ext/cookieconsent/cookieconsent.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/frontend.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/general.css') ?>">
+    <style><?php require("assets/css/stripe.css");?></style>
+
 
     <link rel="icon" type="image/x-icon" href="<?= asset_url('assets/img/favicon.ico') ?>">
     <link rel="icon" sizes="192x192" href="<?= asset_url('assets/img/logo.png') ?>">
@@ -242,7 +244,7 @@
 
             <div id="wizard-frame-3" class="wizard-frame" style="display:none;">
                 <div class="frame-container">
-
+                    
                     <h2 class="frame-title"><?= lang('customer_information') ?></h2>
 
                     <div class="row frame-content">
@@ -266,7 +268,7 @@
                                     <?= lang('email') ?>
                                     <span class="text-danger">*</span>
                                 </label>
-                                <input type="text" id="email" class="required form-control" maxlength="120"/>
+                                <input type="email" id="email" class="required form-control" maxlength="120" required/>
                             </div>
                             <div class="form-group">
                                 <label for="phone-number" class="control-label">
@@ -295,8 +297,16 @@
                                 <label for="zip-code" class="control-label">
                                     <?= lang('zip_code') ?>
                                 </label>
-                                <input type="text" id="zip-code" class="form-control" maxlength="120"/>
-                            </div>
+                                <input list="zipcodes" type="text" id="searchBar" class="form-control">
+                                    <datalist id="zipcodes">
+                                    <option value="0802">
+                                    <option value="2200">
+                                    <option value="1210">
+                                    <option value="1457">
+                                    <option value="3145">
+                                    <option value="2450">
+                                    </datalist>
+                                </div>
                             <div class="form-group">
                                 <label for="notes" class="control-label">
                                     <?= lang('notes') ?>
@@ -305,10 +315,14 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <h3 class="mt-4">Payment Options</h3>
+                    <hr>
+                    <a href="http://localhost:8888/Easy-Appointments/index.php/user/checkout" class="stripe-button" target="_blank">Stripe</a>
                 </div>
 
                 <?php if ($display_terms_and_conditions): ?>
-                    <div class="form-check mb-3">
+                    <div class="form-check mb-3 mt-3">
                         <input type="checkbox" class="required form-check-input" id="accept-to-terms-and-conditions">
                         <label class="form-check-label" for="accept-to-terms-and-conditions">
                             <?= strtr(lang('read_and_agree_to_terms_and_conditions'),
@@ -334,6 +348,7 @@
                         </label>
                     </div>
                 <?php endif ?>
+
 
                 <div class="command-buttons">
                     <button type="button" id="button-back-3" class="btn button-back btn-outline-secondary"
@@ -402,11 +417,14 @@
                         <a href="https://easyappointments.org" target="_blank">Easy!Appointments</a>
                     </span>
 
+                    <a href="http://15917dd8e93583e350907141d5797765356e27d9.web22.temporaryurl.org/" target="_blank" class="backend-link badge badge-success">New Booking System!</a>
+
                     <span class="footer-options">
                         <span id="select-language" class="badge badge-secondary">
                             <i class="fas fa-language mr-2"></i>
                             <?= ucfirst(config('language')) ?>
                         </span>
+                        
 
                         <a class="backend-link badge badge-primary" href="<?= site_url('backend'); ?>">
                             <i class="fas fa-sign-in-alt mr-2"></i>
@@ -472,6 +490,7 @@
         GeneralFunctions.enableLanguageSelection($('#select-language'));
     });
 </script>
+
 
 <?php google_analytics_script(); ?>
 </body>

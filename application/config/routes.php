@@ -1,5 +1,4 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -42,7 +41,6 @@
 $route['default_controller'] = 'appointments';
 $route['404_override'] = 'errors/error404';
 
-
 /*
 | -------------------------------------------------------------------------
 | REST API ROUTING
@@ -79,6 +77,8 @@ $route['api/v1/settings/(:any)']['put'] = 'api/v1/settings/put/$1';
 $route['api/v1/settings/(:any)']['delete'] = 'api/v1/settings/delete/$1';
 
 $route['api/v1/availabilities']['get'] = 'api/v1/availabilities/get';
+
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

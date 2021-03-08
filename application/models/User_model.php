@@ -45,6 +45,23 @@ class User_model extends EA_Model {
         return $user;
     }
 
+
+    /*
+    * 
+    * show products
+    */
+    public function show_products() {
+
+    }
+
+     /*
+    * 
+    * show postcodes
+    */
+
+
+
+
     /**
      * This method saves the user record into the database (used in backend settings page).
      *

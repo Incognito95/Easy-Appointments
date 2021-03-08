@@ -118,7 +118,7 @@
                             <?= lang('email') ?>
                             <span class="text-danger">*</span>
                         </label>
-                        <input id="email" class="form-control required">
+                        <input id="email" class="form-control required" required>
                     </div>
 
                     <div class="form-group">
